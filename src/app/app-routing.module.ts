@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'lista-compras',
     loadChildren: () => import('./lista-compras/lista-compras.module').then( m => m.ListaComprasPageModule)
+  },
+  {
+    path: 'valor-real',
+    loadChildren: () => import('./valor-real/valor-real.module').then( m => m.ValorRealPageModule)
   }
 ];
 

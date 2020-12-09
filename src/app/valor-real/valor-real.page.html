@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Valor do Real</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-item>
+    <ion-label>Dollar </ion-label>
+    <ion-badge slot="end">{{valorEUA | currency}}</ion-badge>
+  </ion-item>
+  <ion-item>
+    <ion-label>Europa</ion-label>
+    <ion-badge slot="end">{{valorEuro | currency}}</ion-badge>
+  </ion-item>
+  <ion-item>
+    <ion-label>Inglaterra </ion-label>
+    <ion-badge slot="end">{{valorReinoUnido | currency}}</ion-badge>
+  </ion-item>
+  <ion-item>
+    <ion-label>Suica </ion-label>
+    <ion-badge slot="end">{{valorSuica | currency}}</ion-badge>
+  </ion-item>
+</ion-list>
+</ion-content>

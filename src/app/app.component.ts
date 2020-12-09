@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Valor real',
-      url: '/folder/Cash',
+      url: '/valor-real',
       icon: 'cash'
     },
     {
