@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Lista de Compra',
-      url: '/folder/List',
+      url: '/lista-compras',
       icon: 'list'
     },
     {
@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
   ) {
     this.initializeApp();
   }
-
+  
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();

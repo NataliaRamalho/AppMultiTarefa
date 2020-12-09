@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Lista de Compras</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form #f="ngForm" (submit)="sendForm(f)">
+    <ion-input name="itemList" type="text"  [(ngModel)]="itemList" placeholder="Digite um item da sua lista"></ion-input>     
+      <ion-button type="submit" name="buttonAdicionar" color="success"> 
+        <ion-icon name="add"></ion-icon>
+            Adicionar 
+       </ion-button>
+  </form>
+  
+  <ion-list >    
+    <ion-item lines="none" *ngFor="let item of listaCompras ; let i = index">
+      <ion-label>{{item}}</ion-label>
+      <ion-checkbox slot="start"></ion-checkbox>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
