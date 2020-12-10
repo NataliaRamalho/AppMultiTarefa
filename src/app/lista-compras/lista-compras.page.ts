@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class ListaComprasPage implements OnInit {
 
   itemList: null;
-  private listaCompras;
+  public listaCompras;
   constructor() {
     this.listaCompras = [];
      

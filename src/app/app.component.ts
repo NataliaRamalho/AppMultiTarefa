@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   public appPages = [
     {
       title: 'Cadastro',
-      url: '/folder/Inbox',
+      url: '/cadastro',
       icon: 'mail'
     },
     {
