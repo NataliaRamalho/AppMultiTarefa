@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Observable } from 'rxjs';
+
+import { AuthService } from '../services/servicesAuth/auth.service';
 
 @Component({
   selector: 'app-lista-compras',
@@ -9,16 +10,17 @@ import { Observable } from 'rxjs';
 })
 export class ListaComprasPage implements OnInit {
 
-  itemList: null;
+  public itemList: null;
   public listaCompras;
-  constructor() {
+  constructor(private auth: AuthService) {
     this.listaCompras = [];
      
   }
 
   ngOnInit() {}
+  
   //Função que adiciona os produtos na lista de Compra
-  async sendForm(f: NgForm) {
+  adicionarProdutos(f: NgForm) {
     if(this.itemList != null){
       this.listaCompras.push(this.itemList)
       this.itemList = null;

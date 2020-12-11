@@ -14,11 +14,6 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'Cadastro',
-      url: '/cadastro',
-      icon: 'mail'
-    },
-    {
       title: 'Clima',
       url: '/folder/Thunderstorm',
       icon: 'thunderstorm'
@@ -45,7 +40,6 @@ export class AppComponent implements OnInit {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    
     private auth:AuthService
 
   ) {
@@ -60,9 +54,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const path = window.location.pathname.split('folder/')[1];
+    /*const path = window.location.pathname.split('folder/')[1];
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
-    }
+    }*/
   }
 }

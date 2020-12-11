@@ -26,6 +26,25 @@ export class AuthService {
     return this.afAuth.auth.signInWithEmailAndPassword(email,senha)
   }
 
+  verificarUsuarioLogado(){
+    if(this.afAuth.auth.currentUser !== null) return true;
+    return false;
+  }
+
+  deslogarUsuario(){
+    this.afAuth.auth.signOut();  
+  }
+
+  async excluirUsuario(){
+    this.user =  this.afAuth.auth.currentUser;
+    if(this.user !== null){
+      return await this.user.delete().then(()=> console.log('sucesso')).catch(()=> console.log('erro'));
+    }
+    
+
+  }
+  
+
   
 
 }

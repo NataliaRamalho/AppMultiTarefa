@@ -9,7 +9,7 @@
 
 <ion-content>
 
-  <form #f="ngForm" (submit)="sendForm(f)">
+  <form #f="ngForm" (submit)="adicionarProdutos(f)">
     <ion-input name="itemList" type="text"  [(ngModel)]="itemList" placeholder="Digite um item da sua lista"></ion-input>     
       <ion-button type="submit" name="buttonAdicionar" color="success"> 
         <ion-icon name="add"></ion-icon>
