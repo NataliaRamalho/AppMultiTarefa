@@ -7,14 +7,20 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <form #f="ngForm" (submit)="sendForm(f)">
-    <ion-input name="nome" type="text"  [(ngModel)]="nome" placeholder="Digite seu e-mail"></ion-input>     
+  <form #f="ngForm" (submit)="cadastrar(f)">
+    <ion-input name="email" type="text"  [(ngModel)]="email" placeholder="Digite seu e-mail"></ion-input>     
     <ion-input name="senha" type="password"  [(ngModel)]="senha" placeholder="Digite sua senha"></ion-input>     
+  
 
       <ion-button type="submit" name="buttonAdicionar" color="success"> 
             Cadastrar 
        </ion-button>
+       <ion-button type="submit" name="buttonLogar" color="primary"> 
+        Logar
+      </ion-button>
+
+      
   </form>
   
-
+  <ion-label>{{mensagemErro}}</ion-label>
 </ion-content>
