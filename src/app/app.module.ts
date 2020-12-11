@@ -13,6 +13,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth'
 
 import { firebaseConfig } from './firebaseConfig'
+import { GuardAuthService } from './services/guard/guard-auth.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +28,8 @@ import { firebaseConfig } from './firebaseConfig'
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    AngularFireAuth
+    AngularFireAuth,
+    GuardAuthService,
   ],
   bootstrap: [AppComponent]
 })
