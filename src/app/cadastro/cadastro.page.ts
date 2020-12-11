@@ -52,4 +52,11 @@ export class CadastroPage implements OnInit {
     }
   }
 
+  logarComFacebook(f:NgForm){
+    this.auth.loginComFaceboock().then(() => {
+      alert('Login realizado com sucesso');
+    }).catch(()=> {alert('Erro ao conectar com o facebook')})
+
+  }
+
 }

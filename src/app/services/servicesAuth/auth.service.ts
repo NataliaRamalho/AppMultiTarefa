@@ -40,10 +40,13 @@ export class AuthService {
     if(this.user !== null){
       return await this.user.delete().then(()=> console.log('sucesso')).catch(()=> console.log('erro'));
     }
-    
-
   }
   
+  loginComFaceboock(){
+    var provider = new firebase.auth.FacebookAuthProvider();
+
+    return firebase.auth().signInWithPopup(provider)
+  }
 
   
 

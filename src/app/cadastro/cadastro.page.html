@@ -7,16 +7,19 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <form #f="ngForm" (submit)="logar(f)">
+  <form #f="ngForm" (submit)="logarComFacebook(f)">
     <ion-input name="email" type="text"  [(ngModel)]="email" placeholder="Digite seu e-mail"></ion-input>     
     <ion-input name="senha" type="password"  [(ngModel)]="senha" placeholder="Digite sua senha"></ion-input>     
   
 
-      <ion-button type="submit" name="buttonAdicionar" color="success"> 
+      <ion-button  (click)= "cadastrar(f)" name="buttonAdicionar" color="success"> 
             Cadastrar 
        </ion-button>
-       <ion-button type="submit" name="buttonLogar" color="primary"> 
+       <ion-button (click)= "logar(f)" name="buttonLogar" color="primary"> 
         Logar
+      </ion-button>
+      <ion-button (click)= "logarComFacebook()" name="buttonLogar" color="primary"> 
+        Logar com o faceboock
       </ion-button>
 
       
