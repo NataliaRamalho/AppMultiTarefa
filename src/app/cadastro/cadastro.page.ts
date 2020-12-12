@@ -1,62 +1,83 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Router} from '@angular/router';
-import { AuthService } from '../services/servicesAuth/auth.service';
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { AuthService } from "../services/servicesAuth/auth.service";
+
+
 
 @Component({
-  selector: 'app-cadastro',
-  templateUrl: './cadastro.page.html',
-  styleUrls: ['./cadastro.page.scss'],
+  selector: "app-cadastro",
+  templateUrl: "./cadastro.page.html",
+  styleUrls: ["./cadastro.page.scss"],
 })
 export class CadastroPage implements OnInit {
-
-  public email : string;
-  public senha : string;
+  public email: string;
+  public senha: string;
   public mensagemErro: string;
 
-  constructor(private auth: AuthService, private router: Router) { 
-    this.email = '';
-    this.senha = '';
+  constructor(private auth: AuthService, private router: Router) {
+    this.email = "";
+    this.senha = "";
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  limparCampos(){
+    this.email = "";
+    this.senha = "";
+    this.mensagemErro = "";
   }
 
-  validarFormulario(){
-    if(this.email == '' || this.senha == ''){
-      this.mensagemErro = 'Voce deve preencher todos os campos'
+  validarFormulario() {
+    if (this.email == "" || this.senha == "") {
+      this.mensagemErro = "Voce deve preencher todos os campos";
       return false;
     }
-    
     return true;
   }
-  cadastrar(f: NgForm) {
-    this.mensagemErro ='';
-    if(this.validarFormulario()){
-      if(f.valid){
-        this.auth.cadastrarUsuarioEmail(this.email, this.senha)
-        .then(() => this.router.navigate(['/valor-real']))
-        .catch(()=> this.mensagemErro = 'Erro ao cadastrar, verifique os dados')
-      }
+  
+  cadastrar() {
+    this.mensagemErro = "";
+    if (this.validarFormulario()) {
+      this.auth
+        .cadastrarUsuarioEmail(this.email, this.senha)
+        .then(() => {
+          alert("Login realizado com sucesso");
+          this.router.navigate(["/lista-compras"]);
+          this.limparCampos();
+          this.auth.getEmail();
+        })
+        .catch(
+          () => (this.mensagemErro = "Erro ao cadastrar, verifique os dados e se voce ja não possui conta")
+        );
+        
     }
   }
 
-  logar(f:NgForm){
-    this.mensagemErro ='';
-    if(this.validarFormulario()){
-      if(f.valid){
-        this.auth.logarUsuarioEmail(this.email, this.senha)
-        .then(() => this.router.navigate(['/valor-real']))
-        .catch((erro)=> this.mensagemErro='Usuario ou senha incorreta' )
-      }
+  logar() {
+    this.mensagemErro = "";
+    if (this.validarFormulario()) {
+      this.auth
+        .logarUsuarioEmail(this.email, this.senha)
+        .then(() => {
+          alert("Login realizado com sucesso");
+          this.router.navigate(["/lista-compras"]);          
+        })
+        .catch((erro) => (this.mensagemErro = "Usuario ou senha incorreta"));
+        
     }
   }
 
-  logarComFacebook(f:NgForm){
-    this.auth.loginComFaceboock().then(() => {
-      alert('Login realizado com sucesso');
-    }).catch(()=> {alert('Erro ao conectar com o facebook')})
-
+  logarComFacebook() {
+    this.auth
+      .loginComFaceboock()
+      .then(() => {
+        alert("Login realizado com sucesso");
+        this.router.navigate(["/lista-compras"]);
+        this.limparCampos();
+      })
+      .catch(() => {
+        alert("Erro ao conectar com o facebook");
+      });
+      
   }
-
 }

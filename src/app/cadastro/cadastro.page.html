@@ -8,22 +8,27 @@
 </ion-header>
 <ion-content>
   <form #f="ngForm" (submit)="logarComFacebook(f)">
-    <ion-input name="email" type="text"  [(ngModel)]="email" placeholder="Digite seu e-mail"></ion-input>     
-    <ion-input name="senha" type="password"  [(ngModel)]="senha" placeholder="Digite sua senha"></ion-input>     
-  
-
+    <ion-row>
+      <ion-input name="email" type="text"  [(ngModel)]="email" placeholder="Digite seu e-mail"></ion-input>  
+    </ion-row>
+    <ion-row>
+      <ion-input name="senha" type="password"  [(ngModel)]="senha" placeholder="Digite sua senha"></ion-input> 
+    </ion-row>
+    <ion-row class="alinhar">
+      <ion-button (click)= "logarComFacebook()" name="buttonLogar"> 
+        <ion-icon slot="start" name="logo-facebook"></ion-icon>
+         Logar com facebook
+      </ion-button>
+      <ion-button (click)= "logar(f)" name="buttonLogar" color='secondary'> 
+         Logar
+      </ion-button>
       <ion-button  (click)= "cadastrar(f)" name="buttonAdicionar" color="success"> 
-            Cadastrar 
-       </ion-button>
-       <ion-button (click)= "logar(f)" name="buttonLogar" color="primary"> 
-        Logar
+         Cadastrar 
       </ion-button>
-      <ion-button (click)= "logarComFacebook()" name="buttonLogar" color="primary"> 
-        Logar com o faceboock
-      </ion-button>
-
-      
+    </ion-row>
+    <ion-row class="alinhar">
+      <ion-label color= "danger">{{mensagemErro}}</ion-label>
+    </ion-row>
   </form>
   
-  <ion-label>{{mensagemErro}}</ion-label>
 </ion-content>

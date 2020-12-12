@@ -23,18 +23,19 @@ export class AppComponent implements OnInit {
     {
       title: "Clima",
       url: "/clima",
-      icon: "thunderstorm",
+      icon: "partly-sunny",
     },
 
     {
-      title: "Valor real",
+      title: "Valor do real",
       url: "/valor-real",
-      icon: "cash",
+      icon: "wallet",
     },
   ];
 
   public selectSair: boolean;
   public selectExcluir: boolean;
+ 
 
   constructor(
     private platform: Platform,
@@ -45,8 +46,9 @@ export class AppComponent implements OnInit {
     private router: Router
   ) {
     this.initializeApp();
-    this.selectSair = false;
+    this.selectSair = false;    
   }
+
 
   async selectSairAcao(titulo: string, tipoExcluir: boolean) {
     if (this.auth.verificarUsuarioLogado()) {
@@ -74,6 +76,7 @@ export class AppComponent implements OnInit {
               tipoExcluir
                 ? (this.selectExcluir = false)
                 : (this.selectSair = false);
+             
             },
           },
         ],

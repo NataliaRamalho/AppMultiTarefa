@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
-import AuthProvider = firebase.auth.AuthProvider;
+
 
 
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class AuthService {
 
   private user: firebase.User;
@@ -25,7 +27,7 @@ export class AuthService {
   logarUsuarioEmail(email:string, senha:string){
     return this.afAuth.auth.signInWithEmailAndPassword(email,senha)
   }
-
+  
   verificarUsuarioLogado(){
     if(this.afAuth.auth.currentUser !== null) return true;
     return false;
@@ -48,6 +50,7 @@ export class AuthService {
     return firebase.auth().signInWithPopup(provider)
   }
 
-  
+
+    
 
 }

@@ -9,10 +9,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  },
-  {
     path: 'lista-compras',
     canActivate: [GuardAuthService],
     loadChildren: () => import('./lista-compras/lista-compras.module').then( m => m.ListaComprasPageModule)
@@ -25,12 +21,12 @@ const routes: Routes = [
   {
     path: 'cadastro',
     loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule)
-  },  {
+  },
+  {
     path: 'clima',
+    canActivate: [GuardAuthService],
     loadChildren: () => import('./clima/clima.module').then( m => m.ClimaPageModule)
   }
-
-
 ];
 
 
