@@ -117,3 +117,8 @@ ion-note {
 ion-item.selected {
   --color: var(--ion-color-primary);
 }
+
+.buttonMenu{
+  cursor: pointer;
+  user-select: none;
+}

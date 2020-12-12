@@ -7,11 +7,26 @@
           <ion-note>hi@ionicframework.com</ion-note>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
+            <ion-item (click)="selectedIndex = i" routerDirection="root"
+             [routerLink]="[p.url]" lines="none" detail="false" 
+             [class.selected]="selectedIndex == i && !selectSair && !selectExcluir">
               <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
               <ion-label>{{ p.title }}</ion-label>
             </ion-item>
           </ion-menu-toggle>
+
+          <ion-menu-toggle  auto-hide="false" class="buttonMenu">
+            <ion-item lines="none" detail="false" [class.selected]='selectSair' (click)='selectSairAcao("sair da conta")' routerDirection="root" >
+              <ion-icon  slot="start" name="log-out-outline"></ion-icon>
+              <ion-label>Sair</ion-label>
+            </ion-item>
+            <ion-item lines="none" detail="false" [class.selected]='selectExcluir' (click)='selectSairAcao("excluir conta", "true")' routerDirection="root">
+              <ion-icon slot="start"  name="trash-outline"></ion-icon>
+              <ion-label>Excluir conta</ion-label>
+            </ion-item>
+            
+          </ion-menu-toggle>
+          
         </ion-list>
       </ion-content>
     </ion-menu>

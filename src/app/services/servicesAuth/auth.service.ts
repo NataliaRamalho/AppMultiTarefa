@@ -38,7 +38,7 @@ export class AuthService {
   async excluirUsuario(){
     this.user =  this.afAuth.auth.currentUser;
     if(this.user !== null){
-      return await this.user.delete().then(()=> console.log('sucesso')).catch(()=> console.log('erro'));
+      return await this.user.delete().then(()=> alert('Conta excluída com sucesso')).catch(()=> alert('Erro ao excluir conta'));
     }
   }
   
