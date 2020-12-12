@@ -14,15 +14,16 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'Clima',
-      url: '/folder/Thunderstorm',
-      icon: 'thunderstorm'
-    },
-    {
       title: 'Lista de Compra',
       url: '/lista-compras',
       icon: 'list'
     },
+    {
+      title: 'Clima',
+      url: '/clima',
+      icon: 'thunderstorm'
+    },
+    
     {
       title: 'Valor real',
       url: '/valor-real',

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Clima</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <ion-grid class="dadosCep">
+     <ion-row class="labelCep">
+       <ion-col class="ion-align-self-start">
+        <ion-input name="CEP" type='numeric' [(ngModel)]="cep" 
+          maxlength='8' 
+          placeholder="Digite o cep que deseja saber a temperatura"></ion-input> 
+       </ion-col>
+     </ion-row>
+     <ion-row class="elementosCentro">
+      <ion-col>
+        <ion-button name="buttonbuscarClima" color="primary" (click)="buscarClima()" class='ion-center'> Buscar Clima </ion-button>
+      </ion-col>
+     </ion-row>
+     <ion-row class="elementosCentro">
+      <ion-col>
+        <ion-spinner *ngIf = "show" color="success">  </ion-spinner>
+      </ion-col>
+     </ion-row>
+
+   </ion-grid>
+    <ion-card *ngIf="mostrarCard">
+      <ion-card-header>
+        <ion-card-title>{{clima.nomeCidade}}</ion-card-title>
+        <ion-card-subtitle>{{clima.descricao}}</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        <ion-item>
+          Temperatura: {{clima.temperatura}} ºC
+        </ion-item>
+        <ion-item>
+          Temperatura Máxima: {{clima.temMax}} ºC
+        </ion-item>
+        <ion-item>
+          Temperatura Mínima: {{clima.temMin}} ºC
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    
+</ion-content>
