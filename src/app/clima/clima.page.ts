@@ -5,8 +5,8 @@ import { keyApi } from "../keyAPI.js";
 interface Clima {
   nomeCidade: string;
   temperatura: string;
-  temMax: string;
-  temMin: string;
+  sensacaoTermica: string;
+  umidade: string;
   descricao: string;
 }
 
@@ -27,8 +27,8 @@ export class ClimaPage implements OnInit {
     this.clima = {
       "nomeCidade": "",
       "temperatura": "",
-      "temMax": "",
-      "temMin": "",
+      "sensacaoTermica": "",
+      "umidade": "",
       "descricao": "",
     }
     this.mostrarCard = false;
@@ -77,8 +77,8 @@ export class ClimaPage implements OnInit {
             .then((res) => {
               this.clima = {
                 temperatura: res.data.main.temp,
-                temMax: res.data.main.temp_max,
-                temMin: res.data.main.temp_min,
+                sensacaoTermica: res.data.main.feels_like,
+                umidade: res.data.main.humidity,
                 nomeCidade: res.data.name,
                 descricao: res.data.weather[0].description,
               };
