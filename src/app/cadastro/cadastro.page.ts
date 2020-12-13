@@ -61,7 +61,7 @@ export class CadastroPage implements OnInit {
           alert("Login realizado com sucesso");
           this.router.navigate(["/lista-compras"]);          
         })
-        .catch((erro) => (this.mensagemErro = "Usuario ou senha incorreta"));
+        .catch(() => (this.mensagemErro = "Usuario ou senha incorreta"));
         
     }
   }

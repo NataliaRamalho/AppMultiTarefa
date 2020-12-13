@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <form #f="ngForm" (submit)="logarComFacebook(f)">
+  <form #f="ngForm">
     <ion-row>
       <ion-input name="email" type="text"  [(ngModel)]="email" placeholder="Digite seu e-mail"></ion-input>  
     </ion-row>
@@ -19,10 +19,10 @@
         <ion-icon slot="start" name="logo-facebook"></ion-icon>
          Logar com facebook
       </ion-button>
-      <ion-button (click)= "logar(f)" name="buttonLogar" color='secondary'> 
+      <ion-button (click)= "logar()" name="buttonLogar" color='secondary'> 
          Logar
       </ion-button>
-      <ion-button  (click)= "cadastrar(f)" name="buttonAdicionar" color="success"> 
+      <ion-button  (click)= "cadastrar()" name="buttonAdicionar" color="success"> 
          Cadastrar 
       </ion-button>
     </ion-row>
