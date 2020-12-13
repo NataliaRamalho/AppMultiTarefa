@@ -44,7 +44,6 @@ export class CadastroPage implements OnInit {
           alert("Login realizado com sucesso");
           this.router.navigate(["/lista-compras"]);
           this.limparCampos();
-          this.auth.getEmail();
         })
         .catch(
           () => (this.mensagemErro = "Erro ao cadastrar, verifique os dados e se voce ja não possui conta")

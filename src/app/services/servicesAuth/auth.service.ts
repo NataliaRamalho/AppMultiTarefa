@@ -49,7 +49,12 @@ export class AuthService {
 
     return firebase.auth().signInWithPopup(provider)
   }
-
+  getEmail() {
+    return this.user && this.user.email;
+  }
+  getIdUsuario() {
+    return this.user && this.user.uid;
+  }
 
     
 

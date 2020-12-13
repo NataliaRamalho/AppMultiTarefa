@@ -15,6 +15,8 @@ import { AngularFireAuth } from 'angularfire2/auth'
 import { firebaseConfig } from './firebaseConfig'
 import { GuardAuthService } from './services/guard/guard-auth.service';
 
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -22,7 +24,8 @@ import { GuardAuthService } from './services/guard/guard-auth.service';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig.fire)
+    AngularFireModule.initializeApp(firebaseConfig.fire),
+    AngularFirestoreModule,
   ],
   providers: [
     StatusBar,

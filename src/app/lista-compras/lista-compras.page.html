@@ -10,17 +10,30 @@
 <ion-content>
 
   <form #f="ngForm" (submit)="adicionarProdutos(f)">
-    <ion-input name="itemList" type="text"  [(ngModel)]="itemList" placeholder="Digite um item da sua lista"></ion-input>     
+    <ion-row>
+      <ion-input name="itemList" type="text"  [(ngModel)]="itemList" placeholder="Digite um item da sua lista"></ion-input> 
+    </ion-row>
+    <ion-row class='button'>
       <ion-button type="submit" name="buttonAdicionar" color="success"> 
-        <ion-icon name="add"></ion-icon>
+        <ion-icon slot='start' name="add"></ion-icon>
             Adicionar 
        </ion-button>
+       <ion-button (click)= excluirLista() name="buttonAdicionar" color='danger'> 
+        <ion-icon name="trash" slot='start'></ion-icon>
+            Excluir Lista 
+       </ion-button>
+    </ion-row>
   </form>
   
-  <ion-list >    
+  <ion-list>   
+     
     <ion-item lines="none" *ngFor="let item of listaCompras ; let i = index">
-      <ion-label>{{item}}</ion-label>
-      <ion-checkbox slot="start"></ion-checkbox>
+      <ion-label >{{item}}</ion-label>
+      <ion-checkbox slot="start" ></ion-checkbox>
+      <ion-button color='danger' (click)= excluirElementoLista(i)>
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+      
     </ion-item>
 
   </ion-list>
