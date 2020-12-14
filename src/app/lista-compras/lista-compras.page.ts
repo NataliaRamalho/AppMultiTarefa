@@ -41,38 +41,42 @@ export class ListaComprasPage implements OnInit {
     }
   }
   excluirElementoLista(index: number) {
-    this.criarAlert(this.listaCompras[index], false)
+    this.criarAlert(this.listaCompras[index], false);
   }
 
-  excluirLista(){
-    this.criarAlert(null, true)
+  excluirLista() {
+    this.criarAlert(null, true);
   }
 
   async criarAlert(item: string, excluirLista: boolean) {
     const alert = await this.alertController.create({
-      header: excluirLista ? 'Tem certeza que deseja excluir toda lista' :`Tem certeza que deseja excluir ${item} da lista?`,
+      header: excluirLista
+        ? "Tem certeza que deseja excluir toda lista"
+        : `Tem certeza que deseja excluir ${item} da lista?`,
       buttons: [
         {
           text: "Não",
-          role: "cancel"
+          role: "cancel",
         },
         {
           text: "Sim",
           handler: () => {
-            excluirLista ? this.listaCompras = [] :  this.listaCompras.splice(this.listaCompras.indexOf(item), 1);
+            excluirLista
+              ? (this.listaCompras = [])
+              : this.listaCompras.splice(this.listaCompras.indexOf(item), 1);
           },
         },
       ],
     });
     await alert.present();
   }
+  
   ngOnDestroy() {
-    if (this.listaCompras.length > 0) {
-      this.db.addProduct(
-        this.listaCompras,
-        this.auth.getIdUsuario(),
-        this.auth.getEmail()
-      );
-    }
+    this.listaCompras.length > 0 ? "" : (this.listaCompras = []);
+    this.db.addProduct(
+      this.listaCompras,
+      this.auth.getIdUsuario(),
+      this.auth.getEmail()
+    );
   }
 }
