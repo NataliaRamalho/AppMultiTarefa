@@ -8,8 +8,8 @@ Link para acessar o App: https://appmultitarefa.web.app/cadastro
 <!--ts-->
    * [Funcionalidades](#funcionalidades)
    * [Tecnologias utilizadas](#tecnologias-utilizadas)
-   * [Telas e explicação de como usar](#telas-e-explicaçao-de-como-usar)
-   * [Como executar o código](#como-executar-o-codigo)
+   * [Telas e explicação de como usar](#telas-e-explicação-de-como-usar)
+   * [Como executar o código](#como-executar-o-código)
 <!--te-->
 
 #  Funcionalidades 
@@ -68,10 +68,11 @@ Link para acessar o App: https://appmultitarefa.web.app/cadastro
 </p>
 <hr>
 <p><strong> OBS: </strong> Para acessar qualquer uma das telas basta clicar no nome da tela no menu ao lado. </p>
-<p><strong> OBS2: </strong> Para sair ou excluir conta basta clicar nos botões do menu ao lado. </p>
+<p><strong> OBS': </strong> Para sair ou excluir conta basta clicar nos botões do menu ao lado. </p>
+<p><strong> OBS'': </strong> O acesso as funcionalidades do sistema é possível, só após a realização do cadastro ou login. </p>
   
 
-# Como executar o código  
+# Como executar o código 
 <h1> Pré-requisitos </h1>
 <li> Node.js </li>
 <li> Pacote npm </li>
@@ -85,7 +86,7 @@ Link para acessar o App: https://appmultitarefa.web.app/cadastro
   <p>Digite o comando a abaixo no seu terminal </p>
   
  ```sh
-git clone
+git clone https://github.com/NataliaRamalho/AppMultiTarefa.git
 ```
 
 
