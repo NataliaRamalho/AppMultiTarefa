@@ -21,18 +21,18 @@ export class AppComponent implements OnInit {
       icon: "home",
     },
     {
-      title: "Lista de Compra",
+      title: "Lista de Compras",
       url: "/lista-compras",
       icon: "list",
     },
     {
-      title: "Clima",
+      title: "Consulta do clima",
       url: "/clima",
       icon: "partly-sunny",
     },
 
     {
-      title: "Valor do real",
+      title: "Consulta do valor do real",
       url: "/valor-real",
       icon: "wallet",
     },
