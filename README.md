@@ -41,8 +41,16 @@ Link para acessar o App: https://appmultitarefa.web.app/cadastro
 
 <hr>
 
+<h2> Consulta do clima</h2>
+<img src="https://github.com/NataliaRamalho/AppMultiTarefa/blob/master/telas/telaConsultaClima.png">
+<p> Nesta tela é possível consultar o tempo a partir do CEP.<br>
+    A consulta do tempo é realizada colocando no campo de texto o CEP e depois apertando o botão "buscar clima".
+</p>
+
+<hr>
+
 <h2> Lista de Compras </h2>
-<img src="https://github.com/NataliaRamalho/AppMultiTarefa/blob/master/telas/listaCompras.png">
+<img src="https://github.com/NataliaRamalho/AppMultiTarefa/blob/master/telas/telaListaCompra.png">
 
 
 <p> Nesta funcionalidade o usuário tem a possibilidade de adicionar, excluir e marcar itens de uma lista.<br>
@@ -54,13 +62,6 @@ Link para acessar o App: https://appmultitarefa.web.app/cadastro
 
 <hr>
 
-<h2> Consulta do clima</h2>
-<img src="https://github.com/NataliaRamalho/AppMultiTarefa/blob/master/telas/ConsultaClima.png">
-<p> Nesta tela é possível consultar o tempo a partir do CEP.<br>
-    A consulta do tempo é realizada colocando no campo de texto o CEP e depois apertando o botão "buscar clima".
-</p>
-
-<hr>
 <h2> Consulta do valor do real</h2>
 <img src="https://github.com/NataliaRamalho/AppMultiTarefa/blob/master/telas/TelaValorReal.png">
 <p> Com essa funcionalidade pode-se consultar o valor do real de acordo com alguns países.<br>
