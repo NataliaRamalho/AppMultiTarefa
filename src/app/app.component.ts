@@ -21,16 +21,15 @@ export class AppComponent implements OnInit {
       icon: "home",
     },
     {
-      title: "Lista de Compras",
-      url: "/lista-compras",
-      icon: "list",
-    },
-    {
       title: "Consulta do clima",
       url: "/clima",
       icon: "partly-sunny",
     },
-
+    {
+      title: "Lista de Compras",
+      url: "/lista-compras",
+      icon: "list",
+    },
     {
       title: "Consulta do valor do real",
       url: "/valor-real",
@@ -77,6 +76,7 @@ export class AppComponent implements OnInit {
               tipoExcluir
                 ? this.auth.excluirUsuario()
                 : this.auth.deslogarUsuario();
+                this.selectedIndex = 0;
               this.router.navigate(["/cadastro"]);
               tipoExcluir
                 ? (this.selectExcluir = false)

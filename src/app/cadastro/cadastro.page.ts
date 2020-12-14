@@ -42,7 +42,7 @@ export class CadastroPage implements OnInit {
         .cadastrarUsuarioEmail(this.email, this.senha)
         .then(() => {
           alert("Login realizado com sucesso");
-          this.router.navigate(["/lista-compras"]);
+          this.router.navigate(["/clima"]);
           this.limparCampos();
         })
         .catch(
@@ -59,7 +59,7 @@ export class CadastroPage implements OnInit {
         .logarUsuarioEmail(this.email, this.senha)
         .then(() => {
           alert("Login realizado com sucesso");
-          this.router.navigate(["/lista-compras"]);          
+          this.router.navigate(["/clima"]);          
         })
         .catch(() => (this.mensagemErro = "Usuario ou senha incorreta"));
         
@@ -71,7 +71,7 @@ export class CadastroPage implements OnInit {
       .loginComFaceboock()
       .then(() => {
         alert("Login realizado com sucesso");
-        this.router.navigate(["/lista-compras"]);
+        this.router.navigate(["/clima"]);
         this.limparCampos();
       })
       .catch(() => {

@@ -14,6 +14,8 @@ export class GuardAuthService implements CanActivate {
     if(this.auth.verificarUsuarioLogado()){
       return true;
     }
+
+    alert('Voce deve realizar o login ou cadastro para acessar essa funcionalidade')
     return false;
   }
 

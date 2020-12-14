@@ -14,6 +14,7 @@ import { AlertController } from "@ionic/angular";
 export class ListaComprasPage implements OnInit {
   public itemList: string;
   public listaCompras: any;
+  
   constructor(
     private auth: AuthService,
     private db: BancoDadosService,
@@ -27,13 +28,13 @@ export class ListaComprasPage implements OnInit {
   }
 
   async recuperarLista() {
+    
     let novalista = await this.db.getListaProdutos(this.auth.getIdUsuario());
     novalista ? (this.listaCompras = novalista) : "";
   }
 
   //Função que adiciona os produtos na lista de Compra
   adicionarProdutos(f: NgForm) {
-    console.log();
 
     if (this.itemList != null) {
       this.listaCompras.push(this.itemList);
@@ -72,7 +73,7 @@ export class ListaComprasPage implements OnInit {
   }
   
   ngOnDestroy() {
-    this.listaCompras.length > 0 ? "" : (this.listaCompras = []);
+    this.listaCompras.length > 0 ? "" : (this.listaCompras = [ ]);
     this.db.addProduct(
       this.listaCompras,
       this.auth.getIdUsuario(),
