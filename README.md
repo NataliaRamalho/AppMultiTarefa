@@ -1,7 +1,6 @@
 
 # AppMultiTarefa
-Aplicação realizada para um processo seletivo.
-Link para acessar o App: https://appmultitarefa.web.app/cadastro
+Aplicação desenvolvida com o Ionic, para acessar clique [aqui](https://appmultitarefa.web.app/cadastro)
 
 Índice
 =================
